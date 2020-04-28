@@ -7,7 +7,7 @@
           $usuario = $_POST["usuario"];
           $clave = $_POST["cont"];
           
-          $mysqli = mysqli_connect("localhost", "root", "", "Bodega");
+          $mysqli = mysqli_connect("localhost", "root", "", "githut");
           if (mysqli_connect_errno($mysqli)) {
               echo "Fallo al conectar a MySQL: " . mysqli_connect_error();
           }
