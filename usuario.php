@@ -26,7 +26,7 @@
                 
                 
                 
-                <form action="regEmpleado.php" method="post"> 
+                <form action="regUsuario.php" method="post"> 
               
                 <br />
 Digite usuario  <input type="text" name="n1" placeholder="nombre usuario" />
@@ -43,7 +43,10 @@ Digite  email  <input type="email" name="n4" placeholder="correo"/>
 Digite rol 
         <select name='rol'>
 <?php
-            include("conexionBD.php");
+           $mysqli = mysqli_connect("localhost", "root", "", "githut");
+           if (mysqli_connect_errno($mysqli)) {
+               echo "Fallo al conectar a MySQL: " . mysqli_connect_error();
+           }
             $sql = "Select * from roles";
             $resultado = mysqli_query($mysqli, $sql);
             if (!$resultado) {
@@ -51,7 +54,7 @@ Digite rol
             }else{  
               while($fila = mysqli_fetch_assoc($resultado)){
                 echo "
-                  <option value='$fila[id_rol]'>$fila[descripcion]</option>
+                  <option value='$fila[id_rol]'>$fila[tipo_rol]</option>
                 ";
               }
             }

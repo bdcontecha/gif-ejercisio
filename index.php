@@ -33,7 +33,7 @@
                             <br />
                 <input type="submit"  value="Iniciar" />
                             <br />
-               
+                            <a href='usuario.php'>registrar</a>
                             </form>
                 </p>
 
